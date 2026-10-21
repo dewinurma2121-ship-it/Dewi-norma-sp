@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Kedokteran & Perjalanan Profesi Dokter</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        medical: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            800: '#115e59',
+                            900: '#134e4a',
+                            dark: '#0f172a',
+                            card: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(180deg, #0d9488 0%, #3b82f6 50%, #8b5cf6 100%);
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 20px;
+            }
+        }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans custom-scrollbar antialiased selection:bg-teal-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2.5 bg-teal-500/10 border border-teal-500/30 rounded-xl text-teal-400">
+                        <i data-lucide="caduceus" class="w-7 h-7"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400 bg-clip-text text-transparent">MedHistoria</span>
+                        <span class="block text-[10px] text-slate-400 font-mono tracking-wider uppercase">Sejarah & Peradaban Dokter</span>
+                    </div>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#hero" class="text-slate-300 hover:text-teal-400 transition-colors flex items-center gap-1.5"><i data-lucide="home" class="w-4 h-4"></i> Beranda</a>
+                    <a href="#timeline" class="text-slate-300 hover:text-teal-400 transition-colors flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i> Garis Waktu</a>
+                    <a href="#tokoh" class="text-slate-300 hover:text-teal-400 transition-colors flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4"></i> Tokoh Kunci</a>
+                    <a href="#penemuan" class="text-slate-300 hover:text-teal-400 transition-colors flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4"></i> Penemuan</a>
+                    <a href="#kuis" class="text-slate-300 hover:text-teal-400 transition-colors flex items-center gap-1.5"><i data-lucide="award" class="w-4 h-4"></i> Kuis Interaktif</a>
+                </nav>
+
+                <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#hero" class="block py-2 text-slate-300 hover:text-teal-400">Beranda</a>
+            <a href="#timeline" class="block py-2 text-slate-300 hover:text-teal-400">Garis Waktu</a>
+            <a href="#tokoh" class="block py-2 text-slate-300 hover:text-teal-400">Tokoh Kunci</a>
+            <a href="#penemuan" class="block py-2 text-slate-300 hover:text-teal-400">Penemuan</a>
+            <a href="#kuis" class="block py-2 text-slate-300 hover:text-teal-400">Kuis Interaktif</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-900/20 via-slate-950/0 to-slate-950/0 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-semibold uppercase tracking-wider mb-6">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Perjalanan Ilmu Penyembuhan
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6 font-serif">
+                    Dari Mantra Mistis Hingga <span class="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">Presisi Digital</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-400 mb-8 font-light leading-relaxed">
+                    Eksplorasi ribuan tahun evolusi dunia kedokteran, pengabdian para tabib terdahulu, serta inovasi saintifik yang menyelamatkan miliaran nyawa manusia.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#timeline" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-semibold transition-all shadow-lg shadow-teal-900/30 gap-2">
+                        Jelajahi Garis Waktu <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#tokoh" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold transition-all gap-2">
+                        Kenali Para Dokter Pelopor
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hippocratic Quote Card -->
+            <div class="mt-16 max-w-2xl mx-auto p-6 rounded-2xl bg-slate-900/60 border border-slate-800 backdrop-blur-md relative overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 text-teal-500/10 opacity-40">
+                    <i data-lucide="quote" class="w-32 h-32"></i>
+                </div>
+                <p class="text-slate-300 italic font-serif text-lg text-center relative z-10 mb-3">
+                    "Di mana pun seni Kedokteran dicintai, di situ juga ada kecintaan terhadap Kemanusiaan."
+                </p>
+                <p class="text-center text-xs font-semibold text-teal-400 tracking-wider uppercase">— Hippocrates (Bapak Kedokteran) —</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-24 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white font-serif mb-4">Garis Waktu Sejarah Kedokteran</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Perkembangan praktisi medis dari era kepercayaan spiritual purba hingga integrasi teknologi kecerdasan buatan.</p>
+            </div>
+
+            <div class="relative timeline-line">
+                <!-- Timeline Item 1 -->
+                <div class="mb-12 flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 md:pr-12 md:text-right w-full pl-12 md:pl-0 mb-4 md:mb-0">
+                        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-teal-500/40 transition-all shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-semibold rounded-full mb-3">3000 SM - 500 SM</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Era Mesir Kuno & Yunani Kuno</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-3">Penyembuhan berpindah dari kepercayaan mistis ritual menuju observasi rasional. Imhotep menjadi tabib pertama yang tercatat sejarah, disusul oleh Hippocrates yang memisahkan medis dari sihir.</p>
+                            <span class="text-xs text-teal-400 font-mono">Pencapaian: Sumpah Hipokrates & Papyrus Ebers</span>
+                        </div>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-4 border-teal-500 flex items-center justify-center text-teal-400 shadow-lg">
+                        <i data-lucide="scroll" class="w-4 h-4"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 w-full"></div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="mb-12 flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 w-full"></div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-4 border-blue-500 flex items-center justify-center text-blue-400 shadow-lg">
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 w-full pl-12 mb-4 md:mb-0">
+                        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-all shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-semibold rounded-full mb-3">Abad ke-8 - Abad ke-14</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Zaman Keemasan Islam (Golden Age)</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-3">Rumah sakit modern pertama (Bimaristan) dibangun. Para ilmuwan Muslim menerjemahkan teks kuno, mendirikan standar pemeriksaan medis, serta memelopori bedah modern.</p>
+                            <span class="text-xs text-blue-400 font-mono">Pencapaian: "Kanon Kedokteran" (Al-Qanun fi at-Tibb) & Alat Bedah Modern</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="mb-12 flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 md:pr-12 md:text-right w-full pl-12 md:pl-0 mb-4 md:mb-0">
+                        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-purple-500/40 transition-all shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 text-xs font-semibold rounded-full mb-3">Abad ke-16 - Abad ke-18</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Era Renaisans & Anatomi Modern</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-3">Pembedahan mayat manusia secara terstruktur dimulai. Pemahaman akurat tentang organ tubuh, sirkulasi darah (William Harvey), dan ditemukannya mikroskop mendobrak pemikiran lama.</p>
+                            <span class="text-xs text-purple-400 font-mono">Pencapaian: Pemetaan Anatomi Presisi & Mikroskop Pertama</span>
+                        </div>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-4 border-purple-500 flex items-center justify-center text-purple-400 shadow-lg">
+                        <i data-lucide="microscope" class="w-4 h-4"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 w-full"></div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="mb-12 flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 w-full"></div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-4 border-emerald-500 flex items-center justify-center text-emerald-400 shadow-lg">
+                        <i data-lucide="syringe" class="w-4 h-4"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 w-full pl-12 mb-4 md:mb-0">
+                        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition-all shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold rounded-full mb-3">Abad ke-19 - Abad ke-20</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Revolusi Antiseptik & Penicillin</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-3">Louis Pasteur dan Robert Koch menemukan teori kuman penyakit. Penicillin (antibiotik pertama) ditemukan oleh Alexander Fleming, menekan angka kematian infeksi secara dramatis.</p>
+                            <span class="text-xs text-emerald-400 font-mono">Pencapaian: Vaksinasi, Anestesi, Sterilisasi, & Antibiotik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="flex flex-col md:flex-row items-center w-full">
+                    <div class="md:w-1/2 md:pr-12 md:text-right w-full pl-12 md:pl-0 mb-4 md:mb-0">
+                        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition-all shadow-xl">
+                            <span class="inline-block px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-xs font-semibold rounded-full mb-3">Abad ke-21 - Masa Depan</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Kedokteran Digital & AI</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-3">Dokter masa kini dibantu oleh Robotik Da Vinci untuk operasi mikro, analisis genomik individu, telemedisin, dan AI yang mempercepat diagnosis penyakit langka secara akurat.</p>
+                            <span class="text-xs text-cyan-400 font-mono">Pencapaian: CRISPR Gene Editing, Bedah Robotik, Telemedisin</span>
+                        </div>
+                    </div>
+                    <div class="absolute left-5 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-900 border-4 border-cyan-500 flex items-center justify-center text-cyan-400 shadow-lg">
+                        <i data-lucide="cpu" class="w-4 h-4"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12 w-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokoh Kunci Section -->
+    <section id="tokoh" class="py-24 bg-slate-900/60 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white font-serif mb-4">Tokoh Kedokteran Legendaris</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Para inovator yang dedikasinya mengubah jalannya sejarah ilmu medis dan menyelamatkan peradaban manusia.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Doctor Card 1 -->
+                <div class="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-teal-500/50 transition-all duration-300 group">
+                    <div class="h-48 bg-slate-800 relative flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
+                        <i data-lucide="user-check" class="w-20 h-20 text-slate-600 group-hover:scale-110 group-hover:text-teal-400 transition-all duration-500
